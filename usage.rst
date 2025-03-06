@@ -6,11 +6,11 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
-
+You can stylize code like this:
 .. code-block:: console
 
    (.venv) $ pip install lumache
+
 
 Creating recipes
 ----------------
@@ -20,12 +20,14 @@ you can use the ``lumache.get_random_ingredients()`` function:
 
 .. autofunction:: lumache.get_random_ingredients
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
+Functions
+----------------
 
 >>> import lumache
 >>> lumache.get_random_ingredients()
 ['shells', 'gorgonzola', 'parsley']
+
+or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
+will raise an exception.
+
+.. autoexception:: lumache.InvalidKindError
