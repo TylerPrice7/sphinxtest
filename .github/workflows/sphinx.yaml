@@ -14,8 +14,15 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install --upgrade sphinx
-        pip install -r requirements.txt  # Ensure you have a requirements.txt listing all dependencies
+        pip install --upgrade sphinx  # Ensure latest Sphinx is installed
+        pip install sphinx-autodoc-typehints  # If using type hints in docs
+        pip install furo  # Ensure 'furo' theme is installed
+        pip install -r requirements.txt  # Install project dependencies
+    - name: Debug Installed Versions
+      run: |
+        python --version
+        pip list | grep sphinx  # Check installed Sphinx version
+      
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
     - name: Upload artifacts
