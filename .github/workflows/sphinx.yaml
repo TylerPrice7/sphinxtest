@@ -26,6 +26,7 @@ jobs:
             python -c "
                 import nltk
                 nltk.download('punkt')
+                "
 
     - name: Build HTML
       run: |
