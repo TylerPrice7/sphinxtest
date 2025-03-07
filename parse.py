@@ -14,7 +14,7 @@ def parse_sentences_t5(sentences):
   sentences as a string separated by newlines.
   
   :param sentences:
-  The `parse_sentences_t5` function takes a string of sentences
+    The `parse_sentences_t5` function takes a string of sentences
     as input, tokenizes the sentences using a tokenizer, generates simpler versions
     of the sentences using a T5 model, and then returns the simplified sentences as
     a single string separated by double newline characters (``\\n\\n``).
