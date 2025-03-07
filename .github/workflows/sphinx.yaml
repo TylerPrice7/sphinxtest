@@ -20,6 +20,13 @@ jobs:
           pip install -r requirements.txt
           echo "VIRTUAL_ENV=.venv" >> $GITHUB_ENV  # Persist venv across steps
   
+    - name: Install NLTK punkt (with SSL workaround)
+      run: |
+            source .venv/bin/activate
+            python -c "
+                import nltk
+                nltk.download('punkt')
+
     - name: Build HTML
       run: |
           source $VIRTUAL_ENV/bin/activate  # Reactivate venv
