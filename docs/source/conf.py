@@ -4,9 +4,16 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import sys
+import os
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]) + '/playground/python/response_processing')
-print(sys.path[0])
+# Get the root directory of your Sphinx project
+docs_root = Path(__file__).resolve().parents[2]  # Adjust if necessary
+
+# Find all subdirectories that contain Python files
+for py_dir in docs_root.rglob("*"):
+    if py_dir.is_dir() and any(f.suffix == ".py" for f in py_dir.iterdir()):
+        sys.path.insert(0, str(py_dir))
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
@@ -23,6 +30,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
+    'sphinx.ext.builders',
 ]
 
 templates_path = ['_templates']
