@@ -5,8 +5,8 @@
 
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]) + '/playground/python/response_processing')
+print(sys.path[0])
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
