@@ -23,7 +23,7 @@ jobs:
     - name: Install NLTK punkt (with SSL workaround)
       run: |
             source .venv/bin/activate
-            python -c "import nltk; nltk.download('punkt')"
+            python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 
     - name: Build HTML
       run: |
